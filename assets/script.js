@@ -117,7 +117,6 @@ planner.forEach(function (thisHour) {
     });
   }
 
-  // creates save button using save icon from font awesome
   let saveButton = $("<i class='far fa-save fa-lg'></i>");
   let savePlan = $("<button>").attr({
     class: "col-md-1 saveBtn",
@@ -126,20 +125,10 @@ planner.forEach(function (thisHour) {
   hourRow.append(hourField, hourPlan, savePlan);
 });
 
-// loads any existing localstorage data after components created
 startPlanner();
 
-// saves data to be used in localStorage
-$(".saveBtn").on("click", function (event) {
+$(".saveBtn").on("click", function () {
   event.preventDefault();
-  let saveIndex = $(this)
-    .siblings(".description")
-    .children(".future")
-    .attr("id");
-  planner[saveIndex].reminder = $(this)
-    .siblings(".description")
-    .children(".future")
-    .val();
-  saveReminders();
-  displayReminders();
+  console.log("saved");
+  console.log(localStorage);
 });
