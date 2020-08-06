@@ -66,11 +66,11 @@ let planner = [
   },
 ];
 
-function saveReminders() {
+function saveR() {
   localStorage.setItem("planner", JSON.stringify(planner));
 }
 
-function displayReminders() {
+function displayR() {
   planner.forEach(function (_thisHour) {
     $(`#${_thisHour.id}`).val(_thisHour.reminder);
   });
@@ -82,8 +82,8 @@ function startPlanner() {
   if (storedDay) {
     planner = storedDay;
   }
-  saveReminders();
-  displayReminders();
+  saveR();
+  displayR();
 }
 
 planner.forEach(function (thisHour) {
